@@ -1,5 +1,5 @@
 from django.db import models
-
+from main.managers import ActiveModelManager
 
 # Create your models here.
 class Product(models.Model):
@@ -10,6 +10,7 @@ class Product(models.Model):
     active = models.BooleanField(default=True)
     in_stock = models.BooleanField(default=True)
     date_updated = models.DateTimeField(auto_now=True)
+    objects=ActiveModelManager()
 
     def __str__(self) -> str:
         return self.name
