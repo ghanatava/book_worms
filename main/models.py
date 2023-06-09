@@ -18,7 +18,9 @@ class Product(models.Model):
 class ProductImage(models.Model):
     product=models.ForeignKey(Product,on_delete=models.CASCADE)
     image=models.ImageField(upload_to="product-images",null=True)
-    thumbnail=models.ImageField(upload_to='product-thumbnails',null=True)
+    thumbnail=models.ImageField(upload_to='product-thumbnails',null=True,blank=True)
+
+
 
 class ProductTag(models.Model):
     products=models.ManyToManyField(Product,blank=True)
@@ -26,5 +28,8 @@ class ProductTag(models.Model):
     slug=models.SlugField(max_length=50)
     description=models.TextField(blank=True)
     active=models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
 
 
