@@ -1,0 +1,56 @@
+[
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Science Fiction",
+    "slug": "science-fiction",
+    "description": "SCI-FI",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Romance",
+    "slug": "romance",
+    "description": "romance",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "mystrey",
+    "slug": "mystrey",
+    "description": "mystrey",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Self help",
+    "slug": "self-help",
+    "description": "self help",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Technology",
+    "slug": "technology",
+    "description": "tech",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "philosophy",
+    "slug": "philosophy",
+    "description": "philosophy",
+    "active": true
+  }
+}
+]

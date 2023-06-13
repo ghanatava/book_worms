@@ -7,15 +7,18 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter=('active','in_stock','date_updated')
     list_editable=('in_stock',)
     search_fields=('name',)
-    prepopulated_fields={"slug":("name",)}
+    prepopulated_fields = {"slug":("name",)}
+    autocomplete_fields=('tags',)
+    
 
 
 class ProductTagAdmin(admin.ModelAdmin):
     list_display=('name','slug')
     list_filter=('active',)
     search_fields=('name',)
-    prepopulated_fields={"slug":("name",)}
-    autocomplete_fields=('products',)
+    prepopulated_fields = {"slug":("name",)}
+    
+
 
 
 class ProductImageAdmin(admin.ModelAdmin):
