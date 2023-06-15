@@ -1,8 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.views.generic.edit import FormView
 from main import forms, models
-from django.core.paginator import Paginator, EmptyPage
-
+from django.core.paginator import Paginator
 # Create your views here.
 def index(request):
     return render(request,'main/home.html',{})
