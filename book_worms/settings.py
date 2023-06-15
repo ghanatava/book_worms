@@ -81,7 +81,7 @@ DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql',
     'HOST': 'localhost',
-    'NAME': 'cfp_portal',
+    'NAME': 'book_worms',
     'USER': 'postgres',
     'PASSWORD': 'postgres',
   }

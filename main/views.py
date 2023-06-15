@@ -18,13 +18,27 @@ class ContactUsView(FormView):
         form.send_mail()
         return super().form_valid(form)
 
-def product_list(request,tag):
+
+def product_list(request, tag):
     if tag != 'all':
         tag = get_object_or_404(models.ProductTag, slug=tag)
 
     if tag and tag != 'all':
-        products=models.Product.objects.active().filter(tags=tag)
+        products=models.Product.objects.active().filter(tags__slug=tag)
     else:
         products = models.Product.objects.active()
         
-    return render(request,'main/product_list.html',{'products':products})
+    return render(request, 'main/product_list.html', {
+        'products':products,
+        })
+
+
+def product_detail(request, slug):
+    product=get_object_or_404(models.Product,slug=slug)
+    return render(request, 'main/product_detail.html', {
+        'product':product,
+    })
+
+
+def add_to_basket(request):
+    pass
