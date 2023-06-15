@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.views.generic.edit import FormView
-from main import forms,models
+from main import forms, models
+from django.core.paginator import Paginator, EmptyPage
 
 # Create your views here.
 def index(request):
@@ -20,6 +21,7 @@ class ContactUsView(FormView):
 
 
 def product_list(request, tag):
+
     if tag != 'all':
         tag = get_object_or_404(models.ProductTag, slug=tag)
 
@@ -27,9 +29,13 @@ def product_list(request, tag):
         products=models.Product.objects.active().filter(tags__slug=tag)
     else:
         products = models.Product.objects.active()
-        
+
+    paginator = Paginator(products, 4)
+    page_number = request.GET.get('page')
+    page_obj=paginator.get_page(page_number)
+    
     return render(request, 'main/product_list.html', {
-        'products':products,
+        'page_obj':page_obj,
         })
 
 
