@@ -16,6 +16,7 @@ pipeline{
         steps{
             sh 'docker system prune -a --volumes -f'
             sh 'docker compose up -d'
+            sh 'docker ps'
         }
     }
 
@@ -26,10 +27,10 @@ pipeline{
     }
   }
  
-  post{
+  /*post{
     always{
         sh 'docker compose down --remove-orphans -v'
         sh 'docker compose ps'
     }
-  }
+  }*/
 }
