@@ -1,9 +1,9 @@
 pipeline{
 
-  agents any
+  agent any
   stages{
     stage('check requirements'){
-        setps{
+        steps{
             sh ''' 
                 docker --version
                 docker compose --version
@@ -13,11 +13,15 @@ pipeline{
     }
 
     stage('run contianers'){
-        sh 'docker compose up -d --no-color'
+        steps{
+            sh 'docker compose up -d --no-color'
+        }
     }
 
     stage('testing'){
-        sh 'curl http://localhost:8000 > '
+        steps{
+            sh 'curl http://localhost:8000 > '
+        }
     }
   }
  
