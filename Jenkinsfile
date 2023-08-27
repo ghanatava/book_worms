@@ -17,12 +17,12 @@ pipeline{
             sh 'docker system prune -a --volumes -f'
             sh 'docker compose up -d'
             sh 'docker ps'
-            sh 'sleep 100'
         }
     }
 
     stage('testing'){
         steps{
+            sh 'sleep 10'
             sh 'curl http://localhost:8000'
         }
     }
