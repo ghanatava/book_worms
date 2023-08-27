@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'book_worms.wsgi.application'
 DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'HOST': 'localhost',
+    'HOST': 'postgres',
     'NAME': 'book_worms',
     'USER': 'postgres',
     'PASSWORD': 'postgres',
