@@ -17,6 +17,7 @@ pipeline{
             sh 'docker system prune -a --volumes -f'
             sh 'docker compose up -d'
             sh 'docker ps'
+            sh 'sleep 100'
         }
     }
 
