@@ -14,6 +14,7 @@ pipeline{
 
     stage('run contianers'){
         steps{
+            sh 'docker system prune -a --volumes -f'
             sh 'docker compose up -d'
         }
     }
