@@ -21,8 +21,7 @@ pipeline{
 
     stage('testing'){
         steps{
-            sh 'curl http://localhost:8000 > home.txt'
-            sh 'cat home.txt'
+            sh 'curl http://localhost:8000'
         }
     }
   }
