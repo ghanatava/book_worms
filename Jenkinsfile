@@ -6,7 +6,7 @@ pipeline{
         steps{
             sh ''' 
                 docker --version
-                docker compose --version
+                docker compose version
                 curl --version
             '''
         }
@@ -14,7 +14,7 @@ pipeline{
 
     stage('run contianers'){
         steps{
-            sh 'docker compose up -d --no-color'
+            sh 'docker compose up -d'
         }
     }
 
